@@ -1,8 +1,13 @@
+@font-face {
+    font-family: 'Gazzetta Slanted';
+    src: url('./fonts/gazzetta-slanted.otf') format('opentype');
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: 'Gazzetta Slanted', sans-serif;
 }
 
 html {
@@ -23,6 +28,7 @@ html {
 body {
     background-color: var(--escuro);
     color: var(--claro);
+    font-size: 1.1rem;
 }
 
 .navegacao {
@@ -31,25 +37,26 @@ body {
     background: rgba(15, 23, 42, 0.8);
     width: 100%;
     z-index: 100;
-    padding: 1.5rem;
+    padding: 2.5rem; 
+    font-size: 1.5rem; 
 }
 
-.menu{
+
+.menu {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 3rem;
-
-
+    gap: 4rem; 
 }
+
 
 .menu-link{
     text-decoration: none;
     color: var(--claro);
-    font-weight: 500;
+    font-weight: 700; 
+    font-size: 1.5rem; 
     position: relative;
-    padding: 0,5rem 0;
-
+    padding: 0.75rem 0; 
 }
 
 .menu-link::after{
@@ -87,13 +94,45 @@ body {
 }
 
 h1 {
-    font-size: 3.5 rem;
+    font-size: 5rem; 
     color: var(--primaria);
     font-weight: bold;
     margin: 20px;
 }
 
 .cabecalho-subtitulo{
-    font-size: 1.5rem;
+    font-size: 2rem; 
     color: var(--claro);
+}
+
+.sobre{
+    padding: 6rem 2rem;
+
+}
+
+.sobre-titulo{
+    font-size:6rem;
+    color:orangered;
+    text-align: center;
+    margin-bottom: 20px;
+
+
+}
+
+.sobre-caixa{
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+
+}
+
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 3rem;
+
 }
