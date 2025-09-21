@@ -5,79 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Érrylan Isaque | Portifólio</title>
+
+    <!-- AOS (Animações ao rolar a página) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <title>Érrylan Isaque | Portfólio</title>
 </head>
 
 <body>
-    <nav class="navegacao">
-        <ul class="menu">
-            <li>
-                <a href="#inicio" class="menu-link">Início</a>
-            </li>
-            <li>
-                <a href="#sobre" class="menu-link">Sobre</a>
-            </li>
-            <li>
-                <a href="#projetos" class="menu-link">Projetos</a>
-            </li>
-            <li>
-                <a href="#contatos" class="menu-link">Contato</a>
-            </li>
-        </ul>
 
+    <div class="particulas"></div>
+
+    <nav class="navegacao" data-aos="fade-down">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
+        </ul>
     </nav>
-    <main id="inicio" class="cabecalho">
+
+    <main id="inicio" class="cabecalho" data-aos="fade-up">
         <img src="./img/errylan.jpg" alt="Foto de Érrylan" class="foto-perfil">
         <h1>Érrylan Isaque</h1>
-        <p class="cabecalho-subtitulo">Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção, Software e T.I</p>
+        <p class="cabecalho-subtitulo">Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção,
+            Software e T.I</p>
     </main>
 
-    <section id="sobre" class="sobre">
+    <section id="sobre" class="sobre" data-aos="fade-right">
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de
-                Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da
-                área Full-Stack. Programador dentro do Transtorno do Espectro Autista (TEA). Estudo atualmente no IFRN
-                no curso de informática e pretendo publicar meus projetos e trabalhos por aqui. Estou em busca de
-                trabalhos para desenvolver mais as minhas habilidades e ter mais experiências dentro da área. Também sei
-                mexer com softwares de computadores e fazer manutenção de hardware.</p>
+                Informática no Ensino Médio Técnico Integrado...</p>
         </div>
     </section>
 
-    <section id="projetos" class="projetos">
+    <section id="projetos" class="projetos" data-aos="zoom-in">
         <h2 class="projetos-titulo">Meus Projetos</h2>
-        <div class="projetos-caixa"></div>
+        <div class="projetos-caixa">
 
+            <div class="projetos-card" data-aos="fade-up">
+                <a href="https://github.com/Errylan/AcalmaTEA" target="_blank" class="link-projeto">
+                    <img src="./img/AcalmaTEAMobile.jpg" alt="AcalmaTEA" class="projetos-imagem">
+                    <div class="caixa-textos-projeto">
+                        <h3 class="info-projetos">AcalmaTEA</h3>
+                        <p class="paragrafo-projetos">Aplicativo para auxiliar autistas em crise</p>
+                    </div>
+                </a>
+            </div>
 
-        <div class="projetos-card">
-            <img src="./img/projeto2.jpeg" alt="AcalmaTEA" class="projetos-imagem">
-            <h3 class="info-projetos">AcalmaTEA</h3>
-            <p class="paragrafo-projetos">Aplicativo voltado para auxiliar autistas em crise </p>
-        </div>
-
-        <div class="projetos-card">
-            <img src="./img/projeto2.jpeg" alt="Prototipo" class="projetos-imagem">
-            <h3 class="info-projetos">AcalmaTEA- Protótipo</h3>
-            <p class="paragrafo-projetos">Protótipo do AcalmaTEA </p>
-        </div>
+            <div class="projetos-card" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/Errylan/AcalmaTEA-PROTOTIPO" target="_blank" class="link-projeto">
+                    <img src="./img/AcalmaTEA.png" alt="AcalmaTEA" class="projetos-imagem">
+                    <div class="caixa-textos-projeto">
+                        <h3 class="info-projetos">AcalmaTEA Protótipo</h3>
+                        <p class="paragrafo-projetos">Versão protótipo do AcalmaTEA</p>
+                    </div>
+                </a>
+            </div>
 
         </div>
     </section>
 
-    <section id="contatos" class="contatos">
+    <section id="contatos" class="contatos" data-aos="fade-left">
         <h2 class="contato-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario">
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
-                <input placeholder="Nome" class="campo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
             </div>
 
             <div class="grupo-form">
-                <textarea class="text-form placeholder=" Digite Sua Mensagem"></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="6" id="Mensagem"></textarea>
             </div>
+
+            <button type="submit" class="botao-form">Enviar para WhatsApp</button>
         </form>
     </section>
 
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        function enviarWhats(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('Mensagem').value;
+            const telefone = '5584992316206';
+
+            const texto = `Olá, meu nome é ${nome}! Segue a mensagem: ${mensagem}`;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+            window.open(url, '_blank');
+        }
+    </script>
 
 </body>
-
 </html>
