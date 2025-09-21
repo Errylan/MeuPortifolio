@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-    <!-- AOS (Animações ao rolar a página) -->
+    <!-- AOS para animações -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <title>Érrylan Isaque | Portfólio</title>
 </head>
@@ -22,6 +22,11 @@
             <li><a href="#projetos" class="menu-link">Projetos</a></li>
             <li><a href="#contatos" class="menu-link">Contato</a></li>
         </ul>
+
+        <div class="idiomas">
+            <button onclick="trocarIdioma('pt')">PT</button>
+            <button onclick="trocarIdioma('en')">EN</button>
+        </div>
     </nav>
 
     <main id="inicio" class="cabecalho" data-aos="fade-up">
@@ -35,7 +40,11 @@
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de
-                Informática no Ensino Médio Técnico Integrado...</p>
+                Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da
+                área Full-Stack. Programador dentro do Transtorno do Espectro Autista (TEA). Estudo atualmente no IFRN
+                no curso de informática e pretendo publicar meus projetos e trabalhos por aqui. Estou em busca de
+                trabalhos para desenvolver mais as minhas habilidades e ter mais experiências dentro da área. Também sei
+                mexer com softwares de computadores e fazer manutenção de hardware.</p>
         </div>
     </section>
 
@@ -55,7 +64,7 @@
 
             <div class="projetos-card" data-aos="fade-up" data-aos-delay="200">
                 <a href="https://github.com/Errylan/AcalmaTEA-PROTOTIPO" target="_blank" class="link-projeto">
-                    <img src="./img/AcalmaTEA.png" alt="AcalmaTEA" class="projetos-imagem">
+                    <img src="./img/AcalmaTEAMobile.jpg" alt="AcalmaTEA Protótipo" class="projetos-imagem">
                     <div class="caixa-textos-projeto">
                         <h3 class="info-projetos">AcalmaTEA Protótipo</h3>
                         <p class="paragrafo-projetos">Versão protótipo do AcalmaTEA</p>
@@ -84,17 +93,67 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
+        AOS.init({ duration: 1000, once: true });
 
+        // Textos multilíngues
+        const textos = {
+    pt: {
+        menu: ["Início", "Sobre", "Projetos", "Contato"],
+        cabecalho: "Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção, Software e T.I",
+        sobreTitulo: "Sobre Mim",
+        sobre: "Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da área Full-Stack. Programador dentro do Transtorno do Espectro Autista (TEA). Estudo atualmente no IFRN no curso de informática e pretendo publicar meus projetos e trabalhos por aqui. Estou em busca de trabalhos para desenvolver mais as minhas habilidades e ter mais experiências dentro da área. Também sei mexer com softwares de computadores e fazer manutenção de hardware.",
+        projetosTitulo: "Meus Projetos",
+        projetos: [
+            { titulo: "AcalmaTEA", desc: "Aplicativo para auxiliar autistas em crise" },
+            { titulo: "AcalmaTEA Protótipo", desc: "Versão protótipo do AcalmaTEA" }
+        ],
+        contatos: { titulo: "Contatos", nome: "Nome", mensagem: "Digite sua mensagem", botao: "Enviar para WhatsApp" }
+    },
+    en: {
+        menu: ["Home", "About Me", "My Projects", "Contact"],
+        cabecalho: "Technical High School in IT. Full Stack Developer in Maintenance, Software and IT",
+        sobreTitulo: "About Me",
+        sobre: "Hello! My name is Érrylan Isaque Nascimento dos Santos. I'm a Computer Science student at Integrated Technical High School. I'm a website and mobile app developer in the Full-Stack field. I'm a programmer specializing in Autism Spectrum Disorder (ASD). I'm currently studying computer science at the IFRN (National Institute of Rio Grande do Norte) and plan to publish my projects and work here. I'm looking for jobs to further develop my skills and gain more experience in this field. I'm also proficient with computer software and hardware maintenance.",
+        projetosTitulo: "My Projects",
+        projetos: [
+            { titulo: "AcalmaTEA", desc: "App designed to help autistic people in crisis" },
+            { titulo: "AcalmaTEA Prototype", desc: "Prototype version of AcalmaTEA" }
+        ],
+        contatos: { titulo: "Contact", nome: "Name", mensagem: "Type your message", botao: "Send to WhatsApp" }
+    }
+};
+
+        function trocarIdioma(lang) {
+            
+            document.querySelectorAll(".menu-link").forEach((link, i) => {
+                link.textContent = textos[lang].menu[i];
+            });
+            
+            document.querySelector(".cabecalho-subtitulo").textContent = textos[lang].cabecalho;
+            
+            document.querySelector(".sobre-paragrafo").textContent = textos[lang].sobre;
+            
+            document.querySelectorAll(".projetos-card").forEach((card, i) => {
+                card.querySelector(".info-projetos").textContent = textos[lang].projetos[i].titulo;
+                card.querySelector(".paragrafo-projetos").textContent = textos[lang].projetos[i].desc;
+            });
+            
+            document.querySelector(".contato-titulo").textContent = textos[lang].contatos.titulo;
+            document.getElementById("nome").placeholder = textos[lang].contatos.nome;
+            document.getElementById("Mensagem").placeholder = textos[lang].contatos.mensagem;
+            document.querySelector(".botao-form").textContent = textos[lang].contatos.botao;
+            
+document.querySelector(".sobre-titulo").textContent = textos[lang].sobreTitulo;
+document.querySelector(".projetos-titulo").textContent = textos[lang].projetosTitulo;
+
+        }
+
+        
         function enviarWhats(event) {
             event.preventDefault();
             const nome = document.getElementById('nome').value;
             const mensagem = document.getElementById('Mensagem').value;
             const telefone = '5584992316206';
-
             const texto = `Olá, meu nome é ${nome}! Segue a mensagem: ${mensagem}`;
             const msgFormatada = encodeURIComponent(texto);
             const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
@@ -103,4 +162,5 @@
     </script>
 
 </body>
+
 </html>
