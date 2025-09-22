@@ -21,15 +21,16 @@
     
     <nav class="navegacao" data-aos="fade-down">
         <ul class="menu">
-            <li><a href="#inicio" class="menu-link">Início</a></li>
-            <li><a href="#sobre" class="menu-link">Sobre</a></li>
-            <li><a href="#projetos" class="menu-link">Projetos</a></li>
-            <li><a href="#contatos" class="menu-link">Contato</a></li>
+            <li><a href="#inicio" class="menu-link">INÍCIO</a></li>
+            <li><a href="#sobre" class="menu-link">SOBRE MIM</a></li>
+            <li><a href="#projetos" class="menu-link">PROJETOS</a></li>
+            <li><a href="#contatos" class="menu-link">CONTATO</a></li>
         </ul>
 
         <div class="idiomas">
             <button onclick="trocarIdioma('pt')">PT</button>
             <button onclick="trocarIdioma('en')">EN</button>
+            <button onclick="trocarIdioma('es')">ES</button>
         </div>
     </nav>
 
@@ -60,7 +61,7 @@
         <div class="projetos-caixa">
 
             <div class="projetos-card" data-aos="fade-up">
-                <a href="https://github.com/Errylan/PlantaBaixaInterativa" target="_blank" class="link-projeto">
+                <a href="https://errylan.github.io/PlantaBaixaInterativa/" target="_blank" class="link-projeto">
                     <img src="./img/Planta.png" alt="AcalmaTEA" class="projetos-imagem">
                     <div class="caixa-textos-projeto">
                         <h3 class="info-projetos">Planta Baixa Interativa</h3>
@@ -98,7 +99,7 @@
         
         const textos = {
     pt: {
-        menu: ["Início", "Sobre", "Projetos", "Contato"],
+        menu: ["INÍCIO", "SOBRE MIM", "PROJETOS", "CONTATO"],
         cabecalho: "Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção, Software e T.I",
         sobreTitulo: "SOBRE MIM",
         sobre: "Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da área Full-Stack. Programador dentro do Transtorno do Espectro Autista (TEA). Estudo atualmente no IFRN no curso de informática e pretendo publicar meus projetos e trabalhos por aqui. Estou em busca de trabalhos para desenvolver mais as minhas habilidades e ter mais experiências dentro da área. Também sei mexer com softwares de computadores e fazer manutenção de hardware.",
@@ -109,7 +110,7 @@
         contatos: { titulo: "CONTATOS", nome: "Nome", mensagem: "Digite sua mensagem", botao: "Enviar para WhatsApp" }
     },
     en: {
-        menu: ["Home", "About Me", "My Projects", "Contact"],
+        menu: ["HOME", "ABOUT ME", "MY PROJECTS", "CONTACT"],
         cabecalho: "Technical High School in IT. Full Stack Developer in Maintenance, Software and IT",
         sobreTitulo: "ABOUT ME",
         sobre: "Hello! My name is Érrylan Isaque Nascimento dos Santos. I'm a Computer Science student at Integrated Technical High School. I'm a website and mobile app developer in the Full-Stack field. I'm a programmer specializing in Autism Spectrum Disorder (ASD). I'm currently studying computer science at the IFRN (National Institute of Rio Grande do Norte) and plan to publish my projects and work here. I'm looking for jobs to further develop my skills and gain more experience in this field. I'm also proficient with computer software and hardware maintenance.",
@@ -118,7 +119,21 @@
             { titulo: "Interactive Floor Plan", desc: "Interactive Floor Plan for Architects" },
         ],
         contatos: { titulo: "CONTACT", nome: "Name", mensagem: "Type your message", botao: "Send to WhatsApp" }
+    },
+
+    es: {
+        menu: ["INICIO", "ACERCA DE MÍ", "MIS PROYECTOS", "CONTACTO"],
+        cabecalho: "Técnico Informático de Nivel Medio. Desarrollador Full Stack, Mantenimiento, Software y TI.",
+        sobreTitulo: "ACERCA DE MÍ",
+        sobre: "¡Hola! Me llamo Érrylan Isaque Nascimento dos Santos. Soy estudiante de Informática en la Escuela Técnica Superior Integrada. Soy desarrollador de sitios web y aplicaciones móviles en el área de desarrollo full-stack. Soy programador especializado en Trastorno del Espectro Autista (TEA). Actualmente estudio informática en el IFRN (Instituto Nacional de Rio Grande do Norte) y planeo publicar mis proyectos y trabajos aquí. Busco trabajo para desarrollar mis habilidades y adquirir más experiencia en este campo. También tengo experiencia en mantenimiento de software y hardware." ,
+        projetosTitulo: "MIS PROYECTOS",
+        projetos: [
+            { titulo: "Plano de planta interactivo", desc: "Plano de planta interactivo para arquitectos" },
+        ],
+        contatos: { titulo: "CONTACTO", nome: "Nombre", mensagem: "Escribe tu mensaje", botao: "Enviar a WhatsApp" }
     }
+
+
 };
 
         function trocarIdioma(lang) {
