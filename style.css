@@ -96,7 +96,7 @@ body {
 
 h1 {
     font-size: 5rem; 
-    color: var(--primaria);
+    color: #3EB489;
     font-weight: bold;
     margin: 20px;
 }
@@ -113,7 +113,7 @@ h1 {
 
 .sobre-titulo{
     font-size:6rem;
-    color:orangered;
+    color:#3EB489;
     text-align: center;
     margin-bottom: 20px;
 
@@ -156,6 +156,7 @@ h1 {
     text-align: center;
     font-size:  6rem;
     margin-bottom: 50px;
+    color: #3EB489;
 }
 
 .projetos-card:hover{
@@ -204,7 +205,7 @@ h1 {
 }
 
 .paragrafo-projetos{
-    color: orangered;
+    color: var(--secundaria);
     line-height: 2.10rem;
     font-size: 2rem;
 }
@@ -219,6 +220,7 @@ h1 {
     text-align: center;
     font-size:  6rem;
     margin-bottom: 50px;
+    color: #3EB489;
 
 }
 
@@ -259,7 +261,7 @@ h1 {
 
 .botao-form{
     color: orangered;
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    background: #3EB489;
     padding: 1.5rem 3rem;  
     border: none;
     border-radius: 8px;
@@ -277,22 +279,32 @@ h1 {
 }
 
 
- .particulas {
-        position: fixed;
-        top: 0; 
-        left: 0;
-        width: 100%;
-        height: 100%; 
-        z-index: -1;
-        opacity: 0.5;
-        background-color: var(--maisescuro);
-        background-image:
-            radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
-            radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%);
-        background-size: cover;
-        background-repeat: no-repeat;
-}
+.particulas {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    opacity: 0.5;
     
+}
+
+
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: none;
+    background: none;
+    animation: fadeVideo 2s ease-in-out forwards;
+}
+
+ 
 
 @keyframes flutuar {
     0%, 100% {
@@ -320,6 +332,17 @@ h1 {
     }
 }
 
+@keyframes fadeVideo {
+    0% {
+        opacity: 0;
+        transform: scale(1.05); 
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
 a, button {
     transition: all 0.3s ease;
 }
@@ -328,4 +351,5 @@ a:hover, button:hover {
     transform: scale(1.05);
     opacity: 0.8;
 }
+
 

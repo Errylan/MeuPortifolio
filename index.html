@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <title>Érrylan Isaque | Portfólio</title>
 </head>
 
 <body>
+    
+    <video autoplay muted loop playsinline id="video-bg">
+        <source src="video/background.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos HTML5.
+    </video>
 
+   
     <div class="particulas"></div>
 
+    
     <nav class="navegacao" data-aos="fade-down">
         <ul class="menu">
             <li><a href="#inicio" class="menu-link">Início</a></li>
@@ -29,15 +33,17 @@
         </div>
     </nav>
 
+    
     <main id="inicio" class="cabecalho" data-aos="fade-up">
         <img src="img/Errylan.jpg" alt="Foto de Érrylan" class="foto-perfil">
-        <h1>Érrylan Isaque</h1>
+        <h1>ÉRRYLAN ISAQUE</h1>
         <p class="cabecalho-subtitulo">Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção,
             Software e T.I</p>
     </main>
 
+    
     <section id="sobre" class="sobre" data-aos="fade-right">
-        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <h2 class="sobre-titulo">SOBRE MIM</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de
                 Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da
@@ -48,8 +54,9 @@
         </div>
     </section>
 
+    
     <section id="projetos" class="projetos" data-aos="zoom-in">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <h2 class="projetos-titulo">MEUS PROJETOS</h2>
         <div class="projetos-caixa">
 
             <div class="projetos-card" data-aos="fade-up">
@@ -75,8 +82,9 @@
         </div>
     </section>
 
+    
     <section id="contatos" class="contatos" data-aos="fade-left">
-        <h2 class="contato-titulo">Contatos</h2>
+        <h2 class="contato-titulo">CONTATOS</h2>
         <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
                 <input placeholder="Nome" class="campo-form" id="nome">
@@ -100,26 +108,26 @@
     pt: {
         menu: ["Início", "Sobre", "Projetos", "Contato"],
         cabecalho: "Técnico em Nível Médio em Informática. Desenvolvedor Full Stack Manutenção, Software e T.I",
-        sobreTitulo: "Sobre Mim",
+        sobreTitulo: "SOBRE MIM",
         sobre: "Olá! Meu nome é Érrylan Isaque Nascimento dos Santos. Sou um estudante de Informática no Ensino Médio Técnico Integrado. Desenvolvedor de sites e aplicativos mobile dentro da área Full-Stack. Programador dentro do Transtorno do Espectro Autista (TEA). Estudo atualmente no IFRN no curso de informática e pretendo publicar meus projetos e trabalhos por aqui. Estou em busca de trabalhos para desenvolver mais as minhas habilidades e ter mais experiências dentro da área. Também sei mexer com softwares de computadores e fazer manutenção de hardware.",
-        projetosTitulo: "Meus Projetos",
+        projetosTitulo: "MEUS PROJETOS",
         projetos: [
             { titulo: "AcalmaTEA", desc: "Aplicativo para auxiliar autistas em crise" },
             { titulo: "AcalmaTEA Protótipo", desc: "Versão protótipo do AcalmaTEA" }
         ],
-        contatos: { titulo: "Contatos", nome: "Nome", mensagem: "Digite sua mensagem", botao: "Enviar para WhatsApp" }
+        contatos: { titulo: "CONTATOS", nome: "Nome", mensagem: "Digite sua mensagem", botao: "Enviar para WhatsApp" }
     },
     en: {
         menu: ["Home", "About Me", "My Projects", "Contact"],
         cabecalho: "Technical High School in IT. Full Stack Developer in Maintenance, Software and IT",
-        sobreTitulo: "About Me",
+        sobreTitulo: "ABOUT ME",
         sobre: "Hello! My name is Érrylan Isaque Nascimento dos Santos. I'm a Computer Science student at Integrated Technical High School. I'm a website and mobile app developer in the Full-Stack field. I'm a programmer specializing in Autism Spectrum Disorder (ASD). I'm currently studying computer science at the IFRN (National Institute of Rio Grande do Norte) and plan to publish my projects and work here. I'm looking for jobs to further develop my skills and gain more experience in this field. I'm also proficient with computer software and hardware maintenance.",
-        projetosTitulo: "My Projects",
+        projetosTitulo: "MY PROJECTS",
         projetos: [
             { titulo: "AcalmaTEA", desc: "App designed to help autistic people in crisis" },
             { titulo: "AcalmaTEA Prototype", desc: "Prototype version of AcalmaTEA" }
         ],
-        contatos: { titulo: "Contact", nome: "Name", mensagem: "Type your message", botao: "Send to WhatsApp" }
+        contatos: { titulo: "CONTACT", nome: "Name", mensagem: "Type your message", botao: "Send to WhatsApp" }
     }
 };
 
